@@ -2,6 +2,7 @@ package com.negranza.lab2negranzadrexler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -29,12 +30,17 @@ EditText et;
         String course7 = sp.getString("Course7", null);
         String course8 = sp.getString("Course8", null);
         String etx = et.getText().toString();
-
-        if(etx.equals(course1))||etx.equals(course2)||etx.equals(course3)||etx.equals(course4)||etx.equals(course5)||etx.equals(course6)||etx.equals(course7)||etx.equals(course8){
+        if(etx.equals(course1)||etx.equals(course2)||etx.equals(course3)||etx.equals(course4)||etx.equals(course5)||etx.equals(course6)||etx.equals(course7)||etx.equals(course8)){
             Toast.makeText(this, "Course is offered in UST", Toast.LENGTH_LONG).show();
         }
+
         else{
             Toast.makeText(this, "No course offered in UST", Toast.LENGTH_LONG).show();
         }
     }
-}
+
+    public void previous(View v){
+        Intent i = new Intent(this, Main2Activity.class);
+        startActivity(i);
+    }
+    }
